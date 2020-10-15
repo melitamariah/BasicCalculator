@@ -21,27 +21,50 @@ public class Main {
         System.out.print("Enter second number: ");
         secondNumber = scanner.nextDouble();
 
-        System.out.print("Now choose an operand: ");
+        System.out.print("Choose an operand: ");
         char guestOperand = scanner.next().charAt(0);
 
-         switch (guestOperand) {
+    /*   switch (guestOperand) {
 
-            case '+' : answer = firstNumber + secondNumber;
-             System.out.print(firstNumber +" "+guestOperand +" "+secondNumber +" "+"= "+answer);
-             break;
-            case '-' : answer = firstNumber - secondNumber;
-             System.out.print(firstNumber +" "+guestOperand +" "+secondNumber +" "+"= "+answer);
-             break;
-            case '*' : answer = firstNumber * secondNumber;
-             System.out.print(firstNumber +" "+guestOperand +" "+secondNumber +" "+"= "+answer);
-             break;
-            case '/' : answer = firstNumber / secondNumber;
-            if (secondNumber == 0) {
-                System.out.print("Enter another integer besides 0.");
-            }
-             break;
+            case '+':
+                answer = firstNumber + secondNumber;
+            case '-':
+                answer = firstNumber - secondNumber;
+            case '*':
+                answer = firstNumber * secondNumber;
+
+            case '/':
+                answer = firstNumber / secondNumber;
+
             default: System.out.println("Try again!");
-         }
+    }
+    System.out.println(firstNumber + " " + guestOperand + " " + secondNumber + " = " + answer);
+*/
+        if (guestOperand == '*') {
+            answer = firstNumber * secondNumber;
+            System.out.println(firstNumber + " " + guestOperand + " " + secondNumber + " = " + answer);
+            System.out.println("Total: " + answer);
+
+        } else if (guestOperand == '+') {
+            answer = firstNumber + secondNumber;
+            System.out.println(firstNumber + " " + guestOperand + " " + secondNumber + " = " + answer);
+            System.out.println("Total: " + answer);
+
+        } else if (guestOperand == '-') {
+            answer = firstNumber - secondNumber;
+            System.out.println(firstNumber + " " + guestOperand + " " + secondNumber + " = " + answer);
+            System.out.println("Total: " + answer);
+
+        } else if (secondNumber == 0 && guestOperand == '/') {
+            System.err.println("Enter value greater than 0.");
+        }
+        else if (guestOperand == '/' && secondNumber != 0) {
+            answer = firstNumber / secondNumber;
+            System.out.println(firstNumber + " " + guestOperand + " " + secondNumber + " = " + answer);
+            System.out.println("Total: " + answer);
+        }
+    }
+}
 
 /*
         if (guestOperand == '*') {
@@ -51,7 +74,7 @@ public class Main {
         } else if (guestOperand == '-') {
             answer = firstNumber - secondNumber;
         }
-        // try {
+     try {
         if
         (guestOperand == '/') {
             answer = firstNumber / secondNumber;
@@ -59,14 +82,12 @@ public class Main {
         else if (secondNumber == 0) {
                 System.err.println("Enter value greater than 0");
         }
-    //}
-    //catch (ArithmeticException e) {
-    // System.out.println(e);
-    // }
+    }catch (ArithmeticException e) {
+           System.out.println(e);
+       }
 
  */
 
-    }
-}
+
 
 
