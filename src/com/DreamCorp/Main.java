@@ -8,9 +8,9 @@ public class Main {
 
     public static void main(String[] args) {
 
-        double firstNumber;
-        double secondNumber;
-        double answer;
+        int firstNumber;
+        int secondNumber;
+        int answer;
 
         Scanner scanner = new Scanner(System.in);
 
@@ -20,15 +20,15 @@ public class Main {
         char guestOperand = scanner.next().charAt(0);
         if (guestOperand == '!') {
             System.out.print("Enter a number: ");
-            firstNumber = scanner.nextDouble();
+            firstNumber = scanner.nextInt();
             secondNumber = 0;
         } else {
 
             System.out.print("Enter first number: ");
-            firstNumber = scanner.nextDouble();
+            firstNumber = scanner.nextInt();
 
             System.out.print("Enter second number: ");
-            secondNumber = scanner.nextDouble();
+            secondNumber = scanner.nextInt();
         }
 
 
@@ -66,16 +66,18 @@ public class Main {
             System.out.println("Total: " + answer);
 
         }
-        else if (secondNumber == 0 && guestOperand == '/') {
-            System.err.println("Cannot divide by 0. Enter a value greater than zero.");
+        else if (guestOperand == '/') {
+            try {
+                answer = firstNumber / secondNumber;
+                System.out.println(firstNumber + " " + guestOperand + " " + secondNumber + " = " + answer);
+                System.out.println("Total: " + answer);
+                } catch(Exception e) {
+                System.out.println("Cannot divide by 0");
+            }
         }
-        else if (guestOperand == '/' && secondNumber != 0) {
-            answer = firstNumber / secondNumber;
-            System.out.println(firstNumber + " " + guestOperand + " " + secondNumber + " = " + answer);
-            System.out.println("Total: " + answer);
-        }
-        else if (guestOperand == '^') {
-            answer = (Math.pow(firstNumber, secondNumber));
+
+      else if (guestOperand == '^') {
+            answer = (int) Math.pow(firstNumber, secondNumber);
             System.out.println(answer);
         } else if (guestOperand == '!') {
             answer = 1;
@@ -88,27 +90,7 @@ public class Main {
     }
 }
 
-/*
-        if (guestOperand == '*') {
-            answer = firstNumber * secondNumber;
-        } else if (guestOperand == '+') {
-            answer = firstNumber + secondNumber;
-        } else if (guestOperand == '-') {
-            answer = firstNumber - secondNumber;
-        }
-     try {
-        if
-        (guestOperand == '/') {
-            answer = firstNumber / secondNumber;
-        }
-        else if (secondNumber == 0) {
-                System.err.println("Enter value greater than 0");
-        }
-    }catch (ArithmeticException e) {
-           System.out.println(e);
-       }
 
- */
 
 
 
